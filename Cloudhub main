@@ -2,14 +2,14 @@ local CoreGui = game:GetService("CoreGui")
 local TweenService = game:GetService("TweenService")
 local Lighting = game:GetService("Lighting")
 
---> ScriptHub V3 (Updated) <--
+--> CloudHub (Updated) <--
 loadstring(game:HttpGet("https://raw.githubusercontent.com/AlwanPandora/CloudHub-Script/refs/heads/main/Cloudhub.lua", true))()
 
---> ScriptHub V3 Variables <--
+--> CloudHub Variables <--
 local DiscordUI = CoreGui:FindFirstChild("Discord")
 local DiscordUIMainFrame = DiscordUI:FindFirstChild("MainFrame")
 
---> ScriptHub V3 UI <--
+--> CloudHub V3 UI <--
 DiscordUI.Enabled = false
 DiscordUIMainFrame.Position = UDim2.new(0.5, 0, -1, 0)
 
@@ -22,7 +22,7 @@ local clickStartTime = 0
 --> Creates ScreenGui <--
 local ScreenGui = Instance.new("ScreenGui")
 ScreenGui.Parent = CoreGui
-ScreenGui.Name = "ScriptHub V3 Toggle Button"
+ScreenGui.Name = "CloudHub UI Toggle Button"
 ScreenGui.ResetOnSpawn = false
 ScreenGui.DisplayOrder = 999
 ScreenGui.Enabled = true 
@@ -35,7 +35,7 @@ imageButton.Parent = ScreenGui
 imageButton.Name = "Toggle Button"
 imageButton.Position = UDim2.new(0.5, 0, 2, 0)
 imageButton.Size = UDim2.new(0.1, 0, 0.1, 0)
-imageButton.Image = "rbxassetid://138135256087369" -- Updated Asset ID
+imageButton.Image = "rbxassetid://121147616550665" -- Updated Asset ID
 imageButton.BackgroundTransparency = 0
 imageButton.ScaleType = Enum.ScaleType.Fit 
 imageButton.Active = true
@@ -70,8 +70,8 @@ local BlurBeginTween = TweenService:Create(Blur, BlurBeginTweenInfo, {Size = 24}
 BlurBeginTween:Play()
 
 --> Blur Tween End <--
-local BlueEndTweenInfo = TweenInfo.new(0.5, Enum.EasingStyle.Sine, Enum.EasingDirection.InOut, 0, false, 0.5)
-local BlurEndTween = TweenService:Create(Blur, BlueEndTweenInfo, {Size = 0})
+local BlurEndTweenInfo = TweenInfo.new(0.5, Enum.EasingStyle.Sine, Enum.EasingDirection.InOut, 0, false, 0.5)
+local BlurEndTween = TweenService:Create(Blur, BlurEndTweenInfo, {Size = 0})
 
 --> ImageButton Tween <--
 local imageButtonTweenInfo = TweenInfo.new(1.5, Enum.EasingStyle.Sine, Enum.EasingDirection.InOut, 0, false, 0)
@@ -88,7 +88,7 @@ imageButton.MouseButton1Down:Connect(function()
     clickStartTime = tick()
 end)
 
---> Event Handler For ImageButton On Mouse Button Click <---
+--> Event Handler For ImageButton On Mouse Button Click <--
 imageButton.MouseButton1Click:Connect(function()
     -- Check If The User Is Dragging --
     if tick() - clickStartTime < 0.2 then
